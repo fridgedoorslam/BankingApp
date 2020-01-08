@@ -11,6 +11,7 @@ namespace BankingApp
             CreateMap<Account, AccountDto>();
 
             CreateMap<AccountForCreationDto, Account>();
+            CreateMap<AccountForUpdateDto, Account>();
         }
     }
 }

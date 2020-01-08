@@ -28,5 +28,15 @@ namespace Repository
         {
             Create(account);
         }
+
+        public void UpdateAccount(Account account)
+        {
+            Update(account);
+        }
+
+        public void DeleteAccount(Account account)
+        {
+            Delete(account);
+        }
     }
 }
