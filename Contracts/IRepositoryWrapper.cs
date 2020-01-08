@@ -4,6 +4,8 @@
     {
         IAccountRepository Account { get; }
 
+        IShareRepository Share { get; }
+
         void Save();
     }
 }

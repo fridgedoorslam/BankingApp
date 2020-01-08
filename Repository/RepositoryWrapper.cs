@@ -7,6 +7,7 @@ namespace Repository
     {
         private RepositoryContext _repoContext;
         private IAccountRepository _account;
+        private IShareRepository _share;
 
         public IAccountRepository Account
         {
@@ -18,6 +19,19 @@ namespace Repository
                 }
 
                 return _account;
+            }
+        }
+
+        public IShareRepository Share
+        {
+            get
+            {
+                if (_share == null)
+                {
+                    _share = new ShareRepository(_repoContext);
+                }
+
+                return _share;
             }
         }
 

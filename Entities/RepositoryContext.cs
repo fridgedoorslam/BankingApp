@@ -12,9 +12,12 @@ namespace Entities
 
         public DbSet<Account> Accounts { get; set; }
 
+        public DbSet<Share> Shares { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>().ToTable("Accounts");
+            modelBuilder.Entity<Share>().ToTable("Shares");
         }
     }
 }
