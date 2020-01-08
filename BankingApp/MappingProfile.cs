@@ -9,6 +9,8 @@ namespace BankingApp
         public MappingProfile()
         {
             CreateMap<Account, AccountDto>();
+
+            CreateMap<AccountForCreationDto, Account>();
         }
     }
 }

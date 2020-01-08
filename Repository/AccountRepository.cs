@@ -17,5 +17,16 @@ namespace Repository
         {
             return FindAll().ToList();
         }
+
+        public Account GetAccountById(int accountId)
+        {
+            return FindByCondition(owner => owner.AccountId.Equals(accountId))
+                    .FirstOrDefault();
+        }
+
+        public void CreateAccount(Account account)
+        {
+            Create(account);
+        }
     }
 }
