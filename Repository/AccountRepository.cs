@@ -6,14 +6,14 @@ using System.Linq;
 
 namespace Repository
 {
-    public class MemberRepository : RepositoryBase<Member>, IMemberRepository
+    public class AccountRepository : RepositoryBase<Account>, IAccountRepository
     {
-        public MemberRepository(RepositoryContext repositoryContext)
+        public AccountRepository(RepositoryContext repositoryContext)
             : base(repositoryContext)
         {
         }
 
-        public IEnumerable<Member> GetAllMembers()
+        public IEnumerable<Account> GetAllAccounts()
         {
             return FindAll().ToList();
         }

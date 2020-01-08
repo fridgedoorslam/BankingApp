@@ -10,11 +10,11 @@ namespace Entities
         {
         }
 
-        public DbSet<Member> Members { get; set; }
+        public DbSet<Account> Accounts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Member>().ToTable("Members");
+            modelBuilder.Entity<Account>().ToTable("Accounts");
         }
     }
 }

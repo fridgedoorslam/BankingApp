@@ -6,18 +6,18 @@ namespace Repository
     public class RepositoryWrapper : IRepositoryWrapper
     {
         private RepositoryContext _repoContext;
-        private IMemberRepository _member;
+        private IAccountRepository _account;
 
-        public IMemberRepository Member
+        public IAccountRepository Account
         {
             get
             {
-                if (_member == null)
+                if (_account == null)
                 {
-                    _member = new MemberRepository(_repoContext);
+                    _account = new AccountRepository(_repoContext);
                 }
 
-                return _member;
+                return _account;
             }
         }
 

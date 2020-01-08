@@ -10,11 +10,11 @@ namespace BankingApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MemberController : ControllerBase
+    public class AccountController : ControllerBase
     {
         private IRepositoryWrapper _repository;
 
-        public MemberController(IRepositoryWrapper repository)
+        public AccountController(IRepositoryWrapper repository)
         {
             _repository = repository;
         }
@@ -24,7 +24,7 @@ namespace BankingApp.Controllers
         {
             try
             {
-                var members = _repository.Member.GetAllMembers();
+                var members = _repository.Account.GetAllAccounts();
 
                 return Ok(members);
             }

@@ -1,8 +1,8 @@
 ﻿namespace Entities.Models
 {
-    public class Member
+    public class Account
     {
-        public int MemberId { get; set; }
+        public int AccountId { get; set; }
 
         public string FirstName { get; set; }
 

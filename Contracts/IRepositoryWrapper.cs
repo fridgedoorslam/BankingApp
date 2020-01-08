@@ -2,7 +2,7 @@
 {
     public interface IRepositoryWrapper
     {
-        IMemberRepository Member { get; }
+        IAccountRepository Account { get; }
 
         void Save();
     }
