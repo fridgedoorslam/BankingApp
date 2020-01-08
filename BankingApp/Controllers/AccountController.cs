@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using Contracts;
-using Microsoft.AspNetCore.Http;
+using Entities.DataTransferObjects;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace BankingApp.Controllers
 {
@@ -13,10 +11,12 @@ namespace BankingApp.Controllers
     public class AccountController : ControllerBase
     {
         private IRepositoryWrapper _repository;
+        private IMapper _mapper;
 
-        public AccountController(IRepositoryWrapper repository)
+        public AccountController(IRepositoryWrapper repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -24,9 +24,9 @@ namespace BankingApp.Controllers
         {
             try
             {
-                var members = _repository.Account.GetAllAccounts();
-
-                return Ok(members);
+                var accounts = _repository.Account.GetAllAccounts();
+                var ownersResult = _mapper.Map<IEnumerable<AccountDto>>(accounts);
+                return Ok(ownersResult);
             }
             catch
             {

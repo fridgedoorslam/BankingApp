@@ -1,3 +1,4 @@
+using AutoMapper;
 using BankingApp.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,6 +24,8 @@ namespace BankingApp
             services.ConfigureDatabaseContext(Configuration);
 
             services.ConfigureRepositoryWrapper();
+
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddControllersWithViews();
 
