@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Entities.Models
+﻿namespace Entities.Models
 {
-    public class Member : DbContext
+    public class Member
     {
         public int MemberId { get; set; }
 
